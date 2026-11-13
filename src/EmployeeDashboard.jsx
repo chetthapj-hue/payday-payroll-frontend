@@ -37,7 +37,7 @@ export default function EmployeeDashboard({ user }) {
     }
     const selected = periods.find(p => String(p.id) === periodId);
     return <main className="min-h-screen px-4 py-10"><div className="mx-auto max-w-6xl space-y-6">
-        <header><p className="font-semibold text-indigo-600">PayDay</p><h1 className="mt-2 text-3xl font-bold">ข้อมูลของเด็กเชี่ย</h1><p className="mt-2 text-slate-600">{user.login} — {user.full_name}</p></header>
+        <header><p className="font-semibold text-indigo-600">PayDayเว้ย</p><h1 className="mt-2 text-3xl font-bold">ข้อมูลของเด็กเชี่ย</h1><p className="mt-2 text-slate-600">{user.login} — {user.full_name}</p></header>
         <nav aria-label="เมนูพนักงาน" className="flex flex-wrap gap-2">
             {[['log', 'ลงเวลาทำงาน'], ['work', 'ประวัติการทำงาน'], ['accrued', 'รายได้สะสมของฉัน'], ['payroll', 'เงินเดือนของฉัน']].map(([id, label]) => <button type="button" key={id} aria-current={tab === id ? 'page' : undefined} className={tab === id ? 'primary' : 'rounded-lg bg-white px-5 py-3'} onClick={() => setTab(id)}>{label}</button>)}
         </nav>
@@ -48,7 +48,7 @@ export default function EmployeeDashboard({ user }) {
             <label className="block max-w-xs">เดือนที่ทำงาน<input required type="month" min="2000-01" max="2199-12" value={month} onChange={e => { if (e.target.value) { setMonth(e.target.value); setLoading(true); setError(''); setLogs([]); } }} /></label>
             {loading ? <p role="status">กำลังโหลดประวัติ…</p> : <div className="table-wrap"><table><thead><tr>{['วันที่ทำงาน', 'กะ', 'เวลาปกติ (ชั่วโมง)', 'OT รวม (ชั่วโมง)', 'OT 3 เท่า (ชั่วโมง)', 'ค่าอาหาร'].map(title => <th key={title}>{title}</th>)}</tr></thead><tbody>
                 {logs.map(log => <tr key={log.id}><td>{thaiDate(log.work_date)}</td><td>{log.shift_type === 'night' ? 'กลางคืน' : 'กลางวัน'}</td><td>{workHours(log.regular_minutes)}</td><td>{workHours(log.overtime_minutes)}</td><td>{workHours(log.overtime_3x_minutes)}</td><td>{money(log.meal_allowance)}</td></tr>)}
-                {!logs.length && <tr><td colSpan="6">ไม่มีประวัติในเดือนที่เลือก</td></tr>}
+                {!logs.length && <tr><td colSpan="6">ไม่มีประวัติในเดือนที่เลือกว่ะ</td></tr>}
             </tbody></table></div>}
         </section>}
         {tab === 'payroll' && <section className="space-y-4">
@@ -60,7 +60,7 @@ export default function EmployeeDashboard({ user }) {
                 <div className="rounded-2xl bg-indigo-50 p-6 leading-8">
                     <h2 className="text-lg font-bold">เงินเดือนงวดจ่าย {thaiDate(selected.payment_date)}</h2>
                     <p>{selected.employee_code} — {selected.full_name}</p>
-                    <p>ค่าจ้างปกติ / ค่าอาหาร / ค่ากะ: {thaiDate(selected.start_date)} ถึง {thaiDate(selected.end_date)}</p>
+                    <p>ค่าจ้างปกติ / ค่าอาหารหมา / ค่ากะ: {thaiDate(selected.start_date)} ถึง {thaiDate(selected.end_date)}</p>
                     <p>OT: {thaiDate(selected.overtime_start_date)} ถึง {thaiDate(selected.overtime_end_date)}</p>
                 </div>
                 <dl className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

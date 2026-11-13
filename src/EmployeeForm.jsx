@@ -80,7 +80,7 @@ function EmployeeForm({ onCreated, employee, onCancel }) {
                     </label>
 
                     <label className="grid gap-2 text-sm">
-                        ชื่อ–นามสกุล
+                        ชื่อ–นามสกุล และ สายพันธ์
                         <input
                             name="full_name"
                             value={form.full_name}
