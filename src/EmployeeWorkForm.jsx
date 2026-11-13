@@ -25,8 +25,8 @@ export default function EmployeeWorkForm({ onCreated }) {
         finally { setSaving(false); }
     }
     return <section aria-labelledby="self-work-heading" className="rounded-2xl border border-slate-200 bg-white p-6">
-        <h2 id="self-work-heading" className="mb-4 text-lg font-semibold">ลงเวลาทำงาน</h2>
-        <p className="mb-4 text-sm text-slate-600">บันทึกสำหรับบัญชีของคุณเท่านั้น เลือกวันนี้หรือย้อนหลังตามวันที่ประเทศไทย</p>
+        <h2 id="self-work-heading" className="mb-4 text-lg font-semibold">ลงเวลาทำงานเว้ย</h2>
+        <p className="mb-4 text-sm text-slate-600">บันทึกสำหรับบัญชีของมึงเท่านั้น เลือกวันนี้หรือย้อนหลังตามวันที่ประเทศไทย</p>
         <form onSubmit={submit}><fieldset disabled={saving} className="grid gap-4 sm:grid-cols-2">
             <label>วันที่ทำงาน<input aria-label="วันที่ทำงาน" required type="date" name="work_date" max={today} value={form.work_date} onChange={change} /></label>
             <label>เวลาปกติ<input aria-label="เวลาปกติ" readOnly value={workHours(480)} /><span className="text-sm text-slate-500">เวลาปกติเต็มวัน 8 ชม.</span></label>

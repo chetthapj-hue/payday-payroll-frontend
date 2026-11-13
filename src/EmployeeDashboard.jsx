@@ -37,7 +37,7 @@ export default function EmployeeDashboard({ user }) {
     }
     const selected = periods.find(p => String(p.id) === periodId);
     return <main className="min-h-screen px-4 py-10"><div className="mx-auto max-w-6xl space-y-6">
-        <header><p className="font-semibold text-indigo-600">PayDay</p><h1 className="mt-2 text-3xl font-bold">ข้อมูลของฉัน</h1><p className="mt-2 text-slate-600">{user.login} — {user.full_name}</p></header>
+        <header><p className="font-semibold text-indigo-600">PayDay</p><h1 className="mt-2 text-3xl font-bold">ข้อมูลของเด็กเชี่ย</h1><p className="mt-2 text-slate-600">{user.login} — {user.full_name}</p></header>
         <nav aria-label="เมนูพนักงาน" className="flex flex-wrap gap-2">
             {[['log', 'ลงเวลาทำงาน'], ['work', 'ประวัติการทำงาน'], ['accrued', 'รายได้สะสมของฉัน'], ['payroll', 'เงินเดือนของฉัน']].map(([id, label]) => <button type="button" key={id} aria-current={tab === id ? 'page' : undefined} className={tab === id ? 'primary' : 'rounded-lg bg-white px-5 py-3'} onClick={() => setTab(id)}>{label}</button>)}
         </nav>
@@ -52,10 +52,10 @@ export default function EmployeeDashboard({ user }) {
             </tbody></table></div>}
         </section>}
         {tab === 'payroll' && <section className="space-y-4">
-            <label className="block rounded-2xl bg-white p-6">งวดเงินเดือนของฉัน<select aria-label="งวดเงินเดือนของฉัน" value={periodId} onChange={e => setPeriodId(e.target.value)}>
+            <label className="block rounded-2xl bg-white p-6">งวดเงินเดือนของเด็กเชี่ย<select aria-label="งวดเงินเดือนของฉัน" value={periodId} onChange={e => setPeriodId(e.target.value)}>
                 <option value="">เลือกงวดที่เผยแพร่แล้ว</option>{periods.map(p => <option key={p.id} value={p.id}>งวดจ่าย {thaiDate(p.payment_date)}</option>)}
             </select></label>
-            {periods.length === 0 && <p>ยังไม่มีงวดเงินเดือนที่เผยแพร่สำหรับคุณ</p>}
+            {periods.length === 0 && <p>ยังไม่มีงวดเงินเดือนที่เผยแพร่สำหรับ</p>}
             {selected && <>
                 <div className="rounded-2xl bg-indigo-50 p-6 leading-8">
                     <h2 className="text-lg font-bold">เงินเดือนงวดจ่าย {thaiDate(selected.payment_date)}</h2>

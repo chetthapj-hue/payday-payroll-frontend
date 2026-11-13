@@ -69,7 +69,7 @@ function EmployeeForm({ onCreated, employee, onCancel }) {
                     className="grid gap-4 sm:grid-cols-2 disabled:opacity-60"
                 >
                     <label className="grid gap-2 text-sm">
-                        รหัสพนักงาน
+                        รหัสพนักเด็กเปรต
                         <input
                             name="employee_code"
                             value={form.employee_code}

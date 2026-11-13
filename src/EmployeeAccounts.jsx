@@ -32,7 +32,7 @@ export default function EmployeeAccounts({ employees }) {
         finally { setBusy(false); }
     }
     return <section className="mb-6 rounded-2xl border border-slate-200 bg-white p-6">
-        <h2 className="mb-4 text-lg font-semibold">บัญชีเข้าสู่ระบบพนักงาน</h2>
+        <h2 className="mb-4 text-lg font-semibold">บัญชีเข้าสู่ระบบของพวกมึงดิว่ะ</h2>
         <form onSubmit={e => { e.preventDefault(); action(); }}><fieldset disabled={busy || loading} className="grid gap-4 sm:grid-cols-2">
             <label>เลือกพนักงานสำหรับบัญชี<select aria-label="เลือกพนักงานสำหรับบัญชี" required value={employeeId} onChange={e => { setEmployeeId(e.target.value); setPassword(''); setError(''); setNotice(''); }}>
                 <option value="">เลือกพนักงาน</option>{employees.map(e => {

@@ -15,8 +15,8 @@ export function Login({ onAuthenticated }) {
     }
     return <main className="flex min-h-screen items-center justify-center bg-slate-100 px-4 py-10 text-slate-900">
         <section className="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-8">
-            <p className="font-semibold text-indigo-600">PayDay</p>
-            <h1 className="mb-6 mt-2 text-2xl font-bold">เข้าสู่ระบบ</h1>
+            <p className="font-semibold text-indigo-600">PayDayเว้ย</p>
+            <h1 className="mb-6 mt-2 text-2xl font-bold">เข้าสู่ระบบสิว่ะ</h1>
             <form onSubmit={submit}><fieldset disabled={busy} className="grid gap-4">
                 <label>ประเภทบัญชี<select aria-label="ประเภทบัญชี" name="role" value={form.role} onChange={change}><option value="employee">พนักงาน</option><option value="admin">ผู้ดูแลระบบ</option></select></label>
                 <label>{form.role === 'employee' ? 'รหัสพนักงาน' : 'ชื่อผู้ดูแลระบบ'}<input autoComplete="username" required name="login" maxLength="100" value={form.login} onChange={change} /></label>
@@ -44,7 +44,7 @@ export function ChangePassword({ required, onChanged, onCancel }) {
     }
     return <main className="min-h-screen bg-slate-100 px-4 py-10"><section className="mx-auto max-w-lg rounded-2xl bg-white p-6">
         <h1 className="mb-4 text-xl font-bold">{required ? 'เปลี่ยนรหัสผ่านชั่วคราว' : 'เปลี่ยนรหัสผ่าน'}</h1>
-        {required && <p className="mb-4">กรุณาตั้งรหัสผ่านใหม่ก่อนเข้าดูข้อมูลของคุณ</p>}
+        {required && <p className="mb-4">กรุณาตั้งรหัสผ่านใหม่ก่อนเข้าดูข้อมูลของมึง</p>}
         <form onSubmit={submit}><fieldset disabled={busy} className="grid gap-4">
             <label>รหัสผ่านปัจจุบัน<input required type="password" autoComplete="current-password" maxLength="128" value={current} onChange={e => setCurrent(e.target.value)} /></label>
             <label>รหัสผ่านใหม่<input required type="password" autoComplete="new-password" minLength="4" maxLength="128" value={password} onChange={e => setPassword(e.target.value)} /></label>
